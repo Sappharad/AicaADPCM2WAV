@@ -125,6 +125,8 @@ namespace aicaadpcm2wav
                 dst[dstLoc++] = (byte)(cur_sample & 0xFF);
                 dst[dstLoc++] = (byte)((cur_sample >> 8) & 0xFF);
 
+                cur_sample = cur_sample * 254 / 256;
+
                 highNybble = !highNybble;
                 if (!highNybble)
                 {
